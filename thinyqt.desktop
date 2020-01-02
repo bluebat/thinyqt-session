@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ThinyQt
+Comment=A Thin and Tiny X Session
+TryExec=thinyqt-session
+Exec=thinyqt-session
+Type=Xsession

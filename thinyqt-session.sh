@@ -3,11 +3,9 @@ export DESKTOP_SESSION=thinyqt
 /usr/libexec/notification-daemon &
 [ -f $HOME/.xsettingsd ] || /usr/share/thinyqt-session/settings.sh
 xsettingsd &
-mkdir -p $HOME/.config/qtpanel $HOME/.config/nitrogen $HOME/.config/sxhkd
-[ -f $HOME/.config/qtpanel/qtpanelrc ] || cp /usr/share/thinyqt-session/qtpanelrc $HOME/.config/qtpanel/
-[ -f $HOME/.config/nitrogen/bg-saved.cfg ] || cp /usr/share/thinyqt-session/bg-saved.cfg $HOME/.config/nitrogen/
-[ -f $HOME/.config/sxhkd/sxhkdrc ] || cp /usr/share/thinyqt-session/sxhkdrc $HOME/.config/sxhkd/sxhkdrc
-[ -f $HOME/.qshutdown ] || cp /usr/share/thinyqt-session/qshutdown $HOME/.qshutdown
+mkdir -p $HOME/.qshutdown
+[ -f $HOME/.fehbg ] || cp /usr/share/thinyqt-session/fehbg $HOME/.fehbg
+[ -f $HOME/.qshutdown/qshutdown.conf ] || cp /usr/share/thinyqt-session/qshutdown.conf $HOME/.qshutdown/
 
 start-pulseaudio-x11
 imsettings-switch -n -q -x
@@ -26,13 +24,13 @@ imsettings-switch -n -q -x
 # $HOME/.dropbox-dist/dropboxd &
 # $HOME/.TelegramDesktop/Telegram -noupdate &
 
-nitrogen --restore
+[ -x $HOME/.fehbg ] && $HOME/.fehbg
 qtpanel &
-yakuake &
+quickterminal --dropdown &
 nm-tray &
 #blueman-applet &
-volumeicon &
+kmix &
 memtray &
 qshutdown &
-sxhkd &
+qscreenshot &
 exec eggwm

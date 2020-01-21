@@ -1,4 +1,0 @@
-Print
-	maim -q 100 -d 2 -e 'qview $f'
-alt + Print
-	maim -q 100 -s -e 'qview $f'

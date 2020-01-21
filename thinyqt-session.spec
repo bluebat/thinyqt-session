@@ -1,5 +1,5 @@
 Name:           thinyqt-session
-Version:        0.0
+Version:        0.2
 Release:        1
 Summary:        A Thin and Tiny Session for X with Qt
 Group:		User Interface/Desktops
@@ -10,26 +10,26 @@ BuildArch:	noarch
 Requires:       notification-daemon
 Requires:       pulseaudio-module-x11
 Requires:       eggwm
-Requires:       greybird-eggwm-theme
-Requires:       yakuake
+Requires:       quickterminal
 Requires:       nm-tray
 Requires:       NetworkManager-wifi
 #Requires:       blueman
 #Requires:       NetworkManager-bluetooth
 Requires:       xsettingsd
-Requires:       imsettings-gsettings
-Requires:       volumeicon
-Requires:       pavucontrol
+Requires:       imsettings-qt
+Requires:       gsettings-qt
+Requires:       kmix
+Requires:       pavucontrol-qt
 Requires:       qtpanel
 #Requires:       system-config-date
 Requires:       ntpdate
 Requires:       desktop-backgrounds-compat
-Requires:       nitrogen
+Requires:       dsbbg
+Requires:       feh
 Requires:       xorg-x11-drivers
 Requires:       memtray
 Requires:       qshutdown
-Requires:       sxhkd
-Requires:       maim
+Requires:       qscreenshot
 Requires:       qview
 Requires:       rpmsphere-release
 Recommends:     joe
@@ -38,11 +38,11 @@ Recommends:     gst123
 Recommends:     qtfm
 Recommends:     qutebrowser
 Recommends:     extcalc
-Recommends:     system-config-printer
-Recommends:     arandr
+#Recommends:     system-config-printer
+Recommends:     qrandr
 Recommends:     qpdfview
 Recommends:     qedit
-Recommends:     webcamoid
+Recommends:     qtcam
 Recommends:     xinput_calibrator
 Recommends:     qftp-x11
 Recommends:     upower
@@ -59,9 +59,6 @@ Qt-based packages and supporting $HOME/.xprofile.
 %install
 make install DESTDIR=%{buildroot}
 
-%post
-sed -i 's|xorg|display-manager|' /usr/lib/systemd/system/sxhkd.service
-
 %files
 %doc LICENSE README.md
 %{_bindir}/%{name}
@@ -69,5 +66,5 @@ sed -i 's|xorg|display-manager|' /usr/lib/systemd/system/sxhkd.service
 %{_datadir}/%{name}
 
 %changelog
-* Thu Jan 02 2020 Wei-Lun Chao <bluebat@member.fsf.org> - 0.0
+* Mon Jan 13 2020 Wei-Lun Chao <bluebat@member.fsf.org> - 0.2
 - Initial package

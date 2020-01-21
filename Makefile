@@ -1,4 +1,4 @@
-VERSION = 0.0
+VERSION = 0.2
 DESTDIR =
 PREFIX = /usr
 PACKAGE = thinyqt-session
@@ -8,20 +8,16 @@ build:
 install:
 	install -Dm755 $(PACKAGE).sh $(DESTDIR)$(PREFIX)/bin/$(PACKAGE)
 	install -Dm644 thinyqt.desktop $(DESTDIR)$(PREFIX)/share/xsessions/thinyqt.desktop
-	install -Dm644 qtpanelrc $(DESTDIR)$(PREFIX)/share/thinyqt-session/qtpanelrc
-	install -Dm644 bg-saved.cfg $(DESTDIR)$(PREFIX)/share/thinyqt-session/bg-saved.cfg
+	install -Dm755 fehbg $(DESTDIR)$(PREFIX)/share/thinyqt-session/fehbg
 	install -Dm755 settings.sh $(DESTDIR)$(PREFIX)/share/thinyqt-session/settings.sh
-	install -Dm644 sxhkdrc $(DESTDIR)$(PREFIX)/share/thinyqt-session/sxhkdrc
-	install -Dm644 qshutdown $(DESTDIR)$(PREFIX)/share/thinyqt-session/qshutdown
+	install -Dm644 qshutdown.conf $(DESTDIR)$(PREFIX)/share/thinyqt-session/qshutdown.conf
 
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/$(PACKAGE)
 	rm -f $(DESTDIR)$(PREFIX)/share/xsessions/thinyqt.desktop
-	rm -f $(DESTDIR)$(PREFIX)/share/thinyqt-session/qtpanelrc
-	rm -f $(DESTDIR)$(PREFIX)/share/thinyqt-session/bg-saved.cfg
+	rm -f $(DESTDIR)$(PREFIX)/share/thinyqt-session/fehbg
 	rm -f $(DESTDIR)$(PREFIX)/share/thinyqt-session/settings.sh
-	rm -f $(DESTDIR)$(PREFIX)/share/thinyqt-session/sxhkdrc
-	rm -f $(DESTDIR)$(PREFIX)/share/thinyqt-session/qshutdown
+	rm -f $(DESTDIR)$(PREFIX)/share/thinyqt-session/qshutdown.conf
 
 clean:
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 export DESKTOP_SESSION=thinyqt
 /usr/libexec/notification-daemon &
-[ -f $HOME/.xsettingsd ] || /usr/share/thinyqt-session/settings.sh
+touch $HOME/.xsettingsd
 xsettingsd &
 mkdir -p $HOME/.qshutdown
 [ -f $HOME/.fehbg ] || cp /usr/share/thinyqt-session/fehbg $HOME/.fehbg
@@ -25,8 +25,8 @@ imsettings-switch -n -q -x
 # $HOME/.TelegramDesktop/Telegram -noupdate &
 
 [ -x $HOME/.fehbg ] && $HOME/.fehbg
-qtpanel &
-quickterminal --dropdown &
+hdepanel &
+quickterminal &
 nm-tray &
 #blueman-applet &
 kmix &

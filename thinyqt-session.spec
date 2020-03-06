@@ -20,7 +20,7 @@ Requires:       imsettings-qt
 Requires:       gsettings-qt
 Requires:       kmix
 Requires:       pavucontrol-qt
-Requires:       qtpanel
+Requires:       hdepanel
 #Requires:       system-config-date
 Requires:       ntpdate
 Requires:       desktop-backgrounds-compat
@@ -34,7 +34,7 @@ Requires:       qview
 Requires:       rpmsphere-release
 Recommends:     joe
 Recommends:     wget
-Recommends:     gst123
+Recommends:     sayonara
 Recommends:     qtfm
 Recommends:     qutebrowser
 Recommends:     extcalc
@@ -66,5 +66,5 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/%{name}
 
 %changelog
-* Mon Jan 13 2020 Wei-Lun Chao <bluebat@member.fsf.org> - 0.2
+* Fri Mar 06 2020 Wei-Lun Chao <bluebat@member.fsf.org> - 0.2
 - Initial package

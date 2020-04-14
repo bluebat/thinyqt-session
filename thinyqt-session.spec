@@ -1,5 +1,5 @@
 Name:           thinyqt-session
-Version:        0.2
+Version:        0.3
 Release:        1
 Summary:        A Thin and Tiny Session for X with Qt
 Group:		User Interface/Desktops
@@ -43,8 +43,10 @@ Recommends:     qrandr
 Recommends:     qpdfview
 Recommends:     qedit
 Recommends:     qtcam
-Recommends:     xinput_calibrator
 Recommends:     qftp-x11
+Recommends:     qutim
+Recommends:     kdocker
+Recommends:     xinput_calibrator
 Recommends:     upower
 
 %description
@@ -66,5 +68,5 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/%{name}
 
 %changelog
-* Fri Mar 06 2020 Wei-Lun Chao <bluebat@member.fsf.org> - 0.2
+* Tue Apr 14 2020 Wei-Lun Chao <bluebat@member.fsf.org> - 0.3
 - Initial package

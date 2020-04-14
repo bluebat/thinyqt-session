@@ -1,4 +1,5 @@
 #!/bin/sh
+export XDG_CURRENT_DESKTOP=ThinyQt
 export DESKTOP_SESSION=thinyqt
 /usr/libexec/notification-daemon &
 touch $HOME/.xsettingsd
@@ -25,12 +26,12 @@ imsettings-switch -n -q -x
 # $HOME/.TelegramDesktop/Telegram -noupdate &
 
 [ -x $HOME/.fehbg ] && $HOME/.fehbg
-hdepanel &
-quickterminal &
+eggwm &
+#quickterminal &
 nm-tray &
 #blueman-applet &
 kmix &
 memtray &
 qshutdown &
 qscreenshot &
-exec eggwm
+exec hdepanel

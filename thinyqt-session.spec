@@ -1,5 +1,5 @@
 Name:           thinyqt-session
-Version:        0.3
+Version:        0.4
 Release:        1
 Summary:        A Thin and Tiny Session for X with Qt
 Group:		User Interface/Desktops
@@ -40,7 +40,7 @@ Recommends:     qutebrowser
 Recommends:     extcalc
 #Recommends:     system-config-printer
 Recommends:     qrandr
-Recommends:     qpdfview
+Recommends:     qtpdf
 Recommends:     qedit
 Recommends:     qtcam
 Recommends:     qftp-x11
@@ -68,5 +68,5 @@ make install DESTDIR=%{buildroot}
 %{_datadir}/%{name}
 
 %changelog
-* Tue Apr 14 2020 Wei-Lun Chao <bluebat@member.fsf.org> - 0.3
+* Thu May 21 2020 Wei-Lun Chao <bluebat@member.fsf.org> - 0.4
 - Initial package
